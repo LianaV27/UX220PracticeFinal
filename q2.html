@@ -8,11 +8,36 @@
 
 <body>
     <header>
-        <h1>Hello Tim</h1>
+        <h1>Tim Berners Lee</h1>
     </header>
     <main>
         <a href="https://en.wikipedia.org/wiki/Tim_Berners-Lee"><img src="https://lh3.googleusercontent.com/pw/ABLVV85bFEnplS5e5aIp4PARgTO7EtT89OFJMXlkSkAZmXgM-hexG00gpAScxIy7Qy3QiWJwOPfYypqqYXlAyw7RsPHA034jNNy-UAWrB0slP1PO50iivVg=w2400" height="400" alt="Picture of Tim Berners Lee"/></a>
-    </main>
-</body>
+    
+        <h2>The inventor of the world wide web also invented...</h2>
+        <dl>
+            <h3><dt>HTML</dt></h3>
+            <dd>HTML: Hypertext Markup Language gives us the standard structure for web pages. It is often used with other languages such as CSS: Cascading Style Sheets and JavaScript.</dd> <br>
+            
+            <h3><dt>URL</dt></h3>
+            <dd>URL: A Uniform Resource Locator, aka a Web Address, carries a reference to its location and a method to retrieve it.</dd> <br>
+            
+            <h3><dt>HTTP</dt></h3>
+            <dd> HTTP: Hypertext Transfer Protocol is an application layer protocol that serves as the foundation for data communication on the web. For example, consider a hypertext document with hyperlinks.</dd> <br>
+        </dl>
 
+    </main>
+    </body>
+
+    <script>
+        class YearElement extends HTMLElement{
+            connectedCallback(){
+                this.innerHTML = new Date().getFullYear();
+            }
+        }
+        customElements.define("x-fullyear", YearElement);
+    </script>
+
+    <footer>
+        &copy; <x-fullyear></x-fullyear>
+    </footer>
 </html>
